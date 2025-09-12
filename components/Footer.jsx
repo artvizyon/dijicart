@@ -2,6 +2,60 @@ import Link from 'next/link'
 import DijitrendLogo from './Logo'
 
 const Footer = () => {
+  const PrivacyIcon = () => (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='16'
+      height='16'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='lucide lucide-file-pen-line-icon lucide-file-pen-line'
+    >
+      <path d='m18 5-2.414-2.414A2 2 0 0 0 14.172 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2' />
+      <path d='M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z' />
+      <path d='M8 18h1' />
+    </svg>
+  )
+  const HeartPlusIcon = () => (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='16'
+      height='16'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='lucide lucide-heart-plus-icon lucide-heart-plus'
+    >
+      <path d='m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49' />
+      <path d='M15 15h6' />
+      <path d='M18 12v6' />
+    </svg>
+  )
+  const ShopPlusIcon = () => (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='16'
+      height='16'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='lucide lucide-store-icon lucide-store'
+    >
+      <path d='M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5' />
+      <path d='M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244' />
+      <path d='M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05' />
+    </svg>
+  )
   const MailIcon = () => (
     <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
       {' '}
@@ -122,17 +176,17 @@ const Footer = () => {
       title: 'WEB SİTE',
       links: [
         { text: 'Ana Sayfa', path: '/', icon: null },
-        { text: 'Gizlilik - KVKK', path: '/', icon: null },
-        { text: 'Dijitrend Plus', path: '/pricing', icon: null },
-        { text: 'Satış Yap', path: '/create-store', icon: null },
+        { text: 'Gizlilik - KVKK', path: '/', icon: PrivacyIcon },
+        { text: 'Dijitrend Plus Üyelik', path: '/pricing', icon: HeartPlusIcon },
+        { text: "Dijitrend'de Satış Yap", path: '/create-store', icon: ShopPlusIcon },
       ],
     },
     {
       title: 'İLETİŞİM',
       links: [
-        { text: '+1-212-456-7890', path: '/', icon: MailIcon },
-        { text: 'thalesdanismanlik@gmail.com', path: '/', icon: PhoneIcon },
-        { text: '794 Los Angeles, 94102', path: '/', icon: MapPinIcon },
+        { text: '+90-535-737-3454', path: '/', icon: PhoneIcon },
+        { text: 'thalesdanismanlik@gmail.com', path: '/', icon: MailIcon },
+        { text: 'Terrosa 54 Sakarya, 54100', path: '/', icon: MapPinIcon },
       ],
     },
   ]

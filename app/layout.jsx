@@ -15,8 +15,8 @@ import './globals.css'
 const outfit = Outfit({ subsets: ['latin'], weight: ['400', '500', '600'] })
 
 export const metadata = {
-  title: 'DijiCart. - Smart Shop',
-  description: 'DijiCart. - Smart Shop',
+  title: 'Diji Store. - Smart Shop',
+  description: 'Diji Shop Store. - Shop Platform',
 }
 
 export default function RootLayout({ children }) {

@@ -43,21 +43,21 @@ export const dummyRatingsData = [
 export const dummyStoreData = {
     id: "store_1",
     userId: "user_1",
-    name: "Happy Shop",
-    description: "At Happy Shop, we believe shopping should be simple, smart, and satisfying. Whether you're hunting for the latest fashion trends, top-notch electronics, home essentials, or unique lifestyle products — we've got it all under one digital roof.",
-    username: "happyshop",
-    address: "3rd Floor, Happy Shop , New Building, 123 street , c sector , NY, US",
+    name: "Rotter Shop",
+    description: "Rotter Shop'ta alışverişin basit, akıllı ve tatmin edici olması gerektiğine inanıyoruz. İster en son moda trendlerini, ister en üst düzey elektronik ürünleri, ister evinizin olmazsa olmazlarını ya da benzersiz yaşam tarzı ürünlerini arıyor olun, hepsini tek bir dijital çatı altında bulabilirsiniz.",
+    username: "rottershop",
+    address: "Atatürk Caddesi , Kemal Sk, Kat 3, Perpa - Rotter Shop, IST, TR",
     status: "approved",
     isActive: true,
     logo: happy_store,
-    email: "happyshop@example.com",
+    email: "rottershop@example.com",
     contact: "+0 1234567890",
     createdAt: "2025-09-04T09:04:16.189Z",
     updatedAt: "2025-09-04T09:04:44.273Z",
     user: {
         id: "user_31dOriXqC4TATvc0brIhlYbwwc5",
         name: "Great Stack",
-        email: "user.greatstack@gmail.com",
+        email: "user.tester@gmail.com",
         image: aa_logo,
     }
 }
@@ -266,17 +266,17 @@ export const addressDummyData = {
 }
 
 export const couponDummyData = [
-    { code: "NEW20", description: "20% Off for New Users", discount: 20, forNewUser: true, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:35:31.183Z" },
-    { code: "NEW10", description: "10% Off for New Users", discount: 10, forNewUser: true, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:35:50.653Z" },
-    { code: "OFF20", description: "20% Off for All Users", discount: 20, forNewUser: false, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:42:00.811Z" },
-    { code: "OFF10", description: "10% Off for All Users", discount: 10, forNewUser: false, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:42:21.279Z" },
-    { code: "PLUS10", description: "20% Off for Members", discount: 10, forNewUser: false, forMember: true, isPublic: false, expiresAt: "2027-03-06T00:00:00.000Z", createdAt: "2025-08-22T11:38:20.194Z" }
+    { code: "NEW20", description: "20% Tüm kullanıcılar için", discount: 20, forNewUser: true, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:35:31.183Z" },
+    { code: "NEW10", description: "10% Tüm kullanıcılar için", discount: 10, forNewUser: true, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:35:50.653Z" },
+    { code: "OFF20", description: "20% Tüm kullanıcılar için", discount: 20, forNewUser: false, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:42:00.811Z" },
+    { code: "OFF10", description: "10% Tüm kullanıcılar için", discount: 10, forNewUser: false, forMember: false, isPublic: false, expiresAt: "2026-12-31T00:00:00.000Z", createdAt: "2025-08-22T08:42:21.279Z" },
+    { code: "PLUS10", description: "20% Yeni kayıt promosyon", discount: 10, forNewUser: false, forMember: true, isPublic: false, expiresAt: "2027-03-06T00:00:00.000Z", createdAt: "2025-08-22T11:38:20.194Z" }
 ]
 
 export const dummyUserData = {
     id: "user_31dQbH27HVtovbs13X2cmqefddM",
-    name: "GreatStack",
-    email: "greatstack@example.com",
+    name: "TearStone",
+    email: "tearstonek@example.com",
     image: aa_logo,
     cart: {}
 }
@@ -329,14 +329,14 @@ export const storesDummyData = [
     {
         id: "cmemkb98v0001tat8r1hiyxhn",
         userId: "user_31dOriXqC4TATvc0brIhlYbwwc5",
-        name: "GreatStack",
-        description: "GreatStack is the education marketplace where you can buy goodies related to coding and tech",
-        username: "greatstack",
+        name: "TearStone",
+        description: "TearStone is the education marketplace where you can buy goodies related to coding and tech",
+        username: "tearstone",
         address: "123 Maplewood Drive Springfield, IL 62704 USA",
         status: "approved",
         isActive: true,
         logo: aa_logo,
-        email: "greatstack@example.com",
+        email: "tearstone@example.com",
         contact: "+0 1234567890",
         createdAt: "2025-08-22T08:22:16.189Z",
         updatedAt: "2025-08-22T08:22:44.273Z",

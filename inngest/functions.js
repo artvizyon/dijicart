@@ -1,3 +1,5 @@
+// inngest functions.js
+
 import { inngest } from './client'
 import prisma from '@/lib/prisma'
 
@@ -45,6 +47,19 @@ export const syncUserDeletion = inngest.createFunction(
         name: `${data.first_name} ${data.last_name}`,
         image: data.image_url,
       },
+    })
+  }
+)
+
+export const deleteCouponOnExpiry = inngest.createFunction(
+  {id: 'delete-coupon-on-expiry'},
+  {evet: 'app/coupon.expired'},
+  async(event, step)=>{
+    const {data} = expiryDate = new Date(data.expires_at)
+    await step.sleepUntil('wait-for-expiry', expiryDate) 
+
+    await step.run('delete-coupon-from-database', async() =>{
+      await prisma.coupon.delete({where: {code:data.code}})
     })
   }
 )

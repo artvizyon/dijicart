@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 const OrderSummary = ({ totalPrice, items }) => {
 
-    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '$';
+    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '₺';
 
     const router = useRouter();
 
@@ -101,7 +101,7 @@ const OrderSummary = ({ totalPrice, items }) => {
                 <p>Toplam:</p>
                 <p className='font-medium text-right'>{currency}{coupon ? (totalPrice - (coupon.discount / 100 * totalPrice)).toFixed(2) : totalPrice.toLocaleString()}</p>
             </div>
-            <button onClick={e => toast.promise(handlePlaceOrder(e), { loading: 'placing Order...' })} className='w-full bg-slate-700 text-white py-2.5 rounded hover:bg-slate-900 active:scale-95 transition-all'>Siparişi Tamamla</button>
+            <button onClick={e => toast.promise(handlePlaceOrder(e), { loading: 'Siparişiniz hazılanıyor...' })} className='w-full bg-slate-700 text-white py-2.5 rounded hover:bg-slate-900 active:scale-95 transition-all'>Siparişi Tamamla</button>
 
             {showAddressModal && <AddressModal setShowAddressModal={setShowAddressModal} />}
 

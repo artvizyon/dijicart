@@ -53,7 +53,17 @@ enum OrderStatus {
 
 enum PaymentMethod {
     COD
+    CREDIT_CARD
+    TROY
+    IYZICO
+    PARAM
+    SHOPIER
+    BKM_EXPRESS
     STRIPE
+    BANK_TRANSFER
+    PAYTR
+    PAYONEER
+    KLARNA
 }
 
 // Required for creating an Order: total, userId, storeId, addressId, isPaid, paymentMethod, isCouponUsed, coupon (JSON), orderItems (nested)

@@ -31,7 +31,7 @@ export default function StoreAddProduct() {
 
 
     return (
-        <form onSubmit={e => toast.promise(onSubmitHandler(e), { loading: "Adding Product..." })} className="text-slate-500 mb-28">
+        <form onSubmit={e => toast.promise(onSubmitHandler(e), { loading: "Ürün ekleniyor..." })} className="text-slate-500 mb-28">
             <h1 className="text-2xl">Add New <span className="text-slate-800 font-medium">Products</span></h1>
             <p className="mt-7">Product Images</p>
 
@@ -45,12 +45,12 @@ export default function StoreAddProduct() {
             </div>
 
             <label htmlFor="" className="flex flex-col gap-2 my-6 ">
-                Name
+                Ürün Adı
                 <input type="text" name="name" onChange={onChangeHandler} value={productInfo.name} placeholder="Ürün adı" className="w-full max-w-sm p-2 px-4 outline-none border border-slate-200 rounded" required />
             </label>
 
             <label htmlFor="" className="flex flex-col gap-2 my-6 ">
-                Description
+                Açıklamalar
                 <textarea name="description" onChange={onChangeHandler} value={productInfo.description} placeholder="Ürün açıklaması" rows={5} className="w-full max-w-sm p-2 px-4 outline-none border border-slate-200 rounded resize-none" required />
             </label>
 
@@ -74,7 +74,7 @@ export default function StoreAddProduct() {
 
             <br />
 
-            <button disabled={loading} className="bg-slate-800 text-white px-6 mt-7 py-2 hover:bg-slate-900 rounded transition">Add Product</button>
+            <button disabled={loading} className="bg-slate-800 text-white px-6 mt-7 py-2 hover:bg-slate-900 rounded transition">Ürün Ekle</button>
         </form>
     )
 }
