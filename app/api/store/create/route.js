@@ -20,7 +20,7 @@ export async function POST(request) {
     const address = formData.get('address')
     const image = formData.get('image')
 
-    if (!name || !username || !description || !email || !contact || !address || !image) {
+    if (!name || !username || !description || !email || !contact || !address || image) {
       return NextResponse.json(
         { error: 'Lütfen Mağaza bilgilerinizi eksiksiz doldurunuz.' }, // { error: 'missing store info' }
         { status: 400 }

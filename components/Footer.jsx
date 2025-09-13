@@ -207,7 +207,7 @@ const Footer = () => {
               <DijitrendLogo />
             </Link>
             <p className='max-w-[410px] mt-6 text-sm'>
-              Thales Danışmanlık'tan selamlar, hoş geldiniz, paslanmaz bağlantı elemanları için
+              Thales Danışmanlık, paslanmaz bağlantı elemanları için
               nihai durağınız. Paslanmaz ve Çelik Bağlantı elemanları ile temel aksesuarlara kadar,
               en iyi inovasyonu size tek bir yerde sunuyoruz.
             </p>

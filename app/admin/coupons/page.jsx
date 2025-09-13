@@ -42,7 +42,9 @@ export default function AdminCoupons() {
       newCoupon.discount = Number(newCoupon.discount)
       newCoupon.expiresAt = new Date(newCoupon.expiresAt)
 
-      const { data } = await axios.post('/api/admin/coupon', { coupon: newCoupon }, 
+      const { data } = await axios.post(
+        '/api/admin/coupon',
+        { coupon: newCoupon },
         { headers: { Authorization: `Bearer ${token}` } }
       )
       toast.success(data.message)
@@ -59,14 +61,16 @@ export default function AdminCoupons() {
   const deleteCoupon = async (code) => {
     try {
       const confirm = window.confirm('Bu kuponu silmek istediğinizden emin misiniz?') // ("Are you sure you want to delete this coupon?")
-      if(!confirm) return
+      if (!confirm) return
 
       const token = await getToken()
-      
-      await axios.delete('/api/admin/coupon?code=${code}', { headers: { Authorization: `Bearer ${token}`}})
+
+      await axios.delete(`/api/admin/coupon?code=${code}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       toast.success('Kupon silindi...')
     } catch (error) {
-        toast.error(error?.response?.data?.error || error.message)
+      toast.error(error?.response?.data?.error || error.message)
     }
   }
 
