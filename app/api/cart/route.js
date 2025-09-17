@@ -2,7 +2,7 @@ import prisma from '@/lib/prisma'
 import { getAuth } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 
-// POST - Update user cart
+// POST
 export async function POST(request) {
   try {
     const { userId } = getAuth(request)
@@ -13,14 +13,14 @@ export async function POST(request) {
       where: { id: userId },
       data: { cart: cart },
     })
-    return NextResponse.json({ message: 'Sepet güncellendi...' }) // {message: 'Cart updated...'}
+    return NextResponse.json({ message: 'Sepet güncellendi...' })
   } catch (error) {
     console.error(error)
     return NextResponse.json({ error: error.code || error.message }, { status: 400 })
   }
 }
 
-// GET - User cart
+// GET
 export async function GET(request) {
   try {
     const { userId } = getAuth(request)

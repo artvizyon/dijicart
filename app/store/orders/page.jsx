@@ -34,14 +34,12 @@ export default function StoreOrders() {
       await axios.post(
         '/api/store/orders',
         { orderId, status },
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
+        { headers: { Authorization: `Bearer ${token}` } }
       )
       setOrders((prev) =>
         prev.map((order) => (order.id === orderId ? { ...order, status } : order))
       )
-      toast.success('Sipariş durumu güncellendi...') //('Order status updated!')
+      toast.success('Sipariş durumu güncellendi...')
     } catch (error) {
       toast.error(error?.response?.data?.error || error.message)
     }
@@ -66,7 +64,7 @@ export default function StoreOrders() {
   return (
     <>
       <h1 className='text-2xl text-slate-500 mb-5'>
-        Store <span className='text-slate-800 font-medium'>Orders</span>
+        Mağaza  <span className='text-slate-800 font-medium'>Siparişler</span>
       </h1>
       {orders.length === 0 ? (
         <p>No orders found</p>
@@ -115,10 +113,10 @@ export default function StoreOrders() {
                       onChange={(e) => updateOrderStatus(order.id, e.target.value)}
                       className='border-gray-300 rounded-md text-sm focus:ring focus:ring-blue-200'
                     >
-                      <option value='ORDER_PLACED'>ORDER_PLACED</option>
-                      <option value='PROCESSING'>PROCESSING</option>
-                      <option value='SHIPPED'>SHIPPED</option>
-                      <option value='DELIVERED'>DELIVERED</option>
+                      <option value='ORDER_PLACED'>Sipariş Verildi</option>
+                      <option value='PROCESSING'>Sipariş Hazırlanıyor</option>
+                      <option value='SHIPPED'>Sipariş Yolda</option>
+                      <option value='DELIVERED'>Teslim Edildi</option>
                     </select>
                   </td>
                   <td className='px-4 py-3 text-gray-500'>

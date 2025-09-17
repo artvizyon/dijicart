@@ -79,7 +79,7 @@ export default function CreateStore() {
     e.preventDefault()
     // EkO Logic 2 submit shop details
     if (!user) {
-      return toast('Devam etmek için lütfen giriş yapınız!') // ('Please login to continue!')
+      return toast('Devam etmek için lütfen giriş yapınız!')
     }
     try {
       const token = await getToken()

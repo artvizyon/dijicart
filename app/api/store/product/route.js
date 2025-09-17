@@ -1,6 +1,6 @@
-import imagekit from '@/configs/imageKıt'
+import imagekit from '@/configs/imageKit'
 import prisma from '@/lib/prisma'
-import authSeller from '@/midllewares/authSeller'
+import authSeller from '@/middlewares/authSeller'
 import { getAuth } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 
@@ -13,7 +13,7 @@ export async function POST(request) {
     const storeId = await authSeller(userId)
 
     if (!storeId) {
-      return NextResponse.json({ error: 'Satıcı Yetkilendirmesi başarısız!' }, { status: 401 }) // { error: 'not authorized' }
+      return NextResponse.json({ error: 'Satıcı Yetkilendirmesi başarısız!' }, { status: 401 })
     }
 
     const formData = await request.formData()
@@ -29,7 +29,7 @@ export async function POST(request) {
       return NextResponse.json(
         { error: 'Lütfen ürün bilgilerini eksiksiz doldurunuz.' },
         { status: 400 }
-      ) // { error: 'missing product details' }
+      )
     }
 
     // imageKit

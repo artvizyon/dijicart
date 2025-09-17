@@ -1,15 +1,14 @@
 // app/api/store/create/route.js
 
-import imagekit from '@/configs/imageKıt'
+import imagekit from '@/configs/imageK'
 import prisma from '@/lib/prisma'
 import { getAuth } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 
-// POST - Store create
+// POST - Mağaza başvuru
 export async function POST(request) {
   try {
     const { userId } = getAuth(request)
-
     const formData = await request.formData()
 
     const name = formData.get('name')
@@ -20,9 +19,18 @@ export async function POST(request) {
     const address = formData.get('address')
     const image = formData.get('image')
 
-    if (!name || !username || !description || !email || !contact || !address || image) {
+    if (
+      !name ||
+      !username ||
+      !description ||
+      !email ||
+      !contact ||
+      !address ||
+      !image ||
+      image.size === 0
+    ) {
       return NextResponse.json(
-        { error: 'Lütfen Mağaza bilgilerinizi eksiksiz doldurunuz.' }, // { error: 'missing store info' }
+        { error: 'Lütfen Mağaza bilgilerinizi eksiksiz doldurunuz.' },
         { status: 400 }
       )
     }
@@ -35,7 +43,7 @@ export async function POST(request) {
       where: { username: username.toLowerCase() },
     })
     if (isUsernameTaken) {
-      return NextResponse.json({ error: 'Bu isim kullanılmaktadır.' }, { status: 400 }) // { error: 'username already taken.' }
+      return NextResponse.json({ error: 'Bu isim kullanılmaktadır.' }, { status: 400 })
     }
 
     // image upload
@@ -77,7 +85,7 @@ export async function POST(request) {
       },
     })
 
-    return NextResponse.json({ message: 'Başvurunuz alındı, onay bekleniyor.' }) // { message: 'applied, waiting for approval.' }
+    return NextResponse.json({ message: 'Başvurunuz alındı, onay bekleniyor.' })
   } catch (error) {
     console.error(error)
     return NextResponse.json({ error: error.code || error.message }, { status: 400 })

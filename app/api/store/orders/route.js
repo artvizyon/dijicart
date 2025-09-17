@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma'
-import authSeller from '@/midllewares/authSeller'
+import authSeller from '@/middlewares/authSeller'
 import { getAuth } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 
@@ -11,7 +11,7 @@ export async function POST(request) {
     const storeId = await authSeller(userId)
 
     if (!storeId) {
-      return NextResponse.json({ error: 'Satıcı Yetkilendirmesi başarısız!' }, { status: 401 }) // { error: 'not authorized' }
+      return NextResponse.json({ error: 'Satıcı Yetkilendirmesi başarısız!' }, { status: 401 })
     }
 
     const { orderId, status } = await request.json()

@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma'
-import authSeller from '@/midllewares/authSeller'
+import authSeller from '@/middlewares/authSeller'
 import { getAuth } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 

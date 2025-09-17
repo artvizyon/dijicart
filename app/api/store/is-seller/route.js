@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma'
-import authSeller from '@/midllewares/authSeller'
+import authSeller from '@/middlewares/authSeller'
 import { getAuth } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 
@@ -9,7 +9,7 @@ export async function GET(request) {
     const isSeller = await authSeller(userId)
 
     if (!isSeller) {
-      return NextResponse.json({ error: 'Mağaza Yetkilendirmesi başarısız!' }, { status: 401 }) // { error: 'not authorized' }
+      return NextResponse.json({ error: 'Mağaza Yetkilendirmesi başarısız!' }, { status: 401 })
     }
 
     const storeInfo = await prisma.store.findUnique({

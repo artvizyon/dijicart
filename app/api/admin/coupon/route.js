@@ -1,6 +1,6 @@
 import { inngest } from '@/inngest/client'
 import prisma from '@/lib/prisma'
-import authAdmin from '@/midllewares/authAdmin'
+import authAdmin from '@/middlewares/authAdmin'
 import { getAuth } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 
